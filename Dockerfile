@@ -10,6 +10,7 @@ RUN apk update && apk upgrade && \
         bash \
         git \
         openssh \
+        zip \
         && \
     pip install --upgrade awscli s3cmd python-magic
 
