@@ -14,6 +14,10 @@ RUN apk update && apk upgrade && \
         docker \
         && \
     pip install --upgrade awscli s3cmd python-magic
+RUN addgroup -g 1000 -S circleci && \
+    adduser -u 1000 -S circleci -G circleci
 
+USER circleci:circleci
+RUN umask 0077; mkdir $HOME/.ssh
 
 
